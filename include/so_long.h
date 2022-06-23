@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/22 20:21:15 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/23 13:30:27 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 //# include <mlx.h> Cette facon devrait aussi fonctionner 
+# include <fcntl.h>
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h> 
@@ -27,8 +28,9 @@
 
 typedef struct s_var
 {
-	int	width;
-	int	height;
+	int		width;
+	int		height;
+	char	**map;
 }				t_var;
 
 typedef struct s_data
