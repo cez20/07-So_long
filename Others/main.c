@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/22 11:09:33 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/26 13:03:46 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,40 @@ int main (int argc, char **argv) // Je mets ici un document en format .ber.
 	
 	//mlx_key_hook(mlx_window, deal_key, (void *)0);
     mlx_loop(mlx); // Cette fonction va dire au macOs de dessiner ce que vous lui avez demande de dessine. Permet aussi de gerer des evenements.  
+}
+
+//Function pour malloc suffisament d'espace a mon tableau 2D. 
+void	map_malloc(t_var *map, int fd, char *argv)
+{
+	char	*str;
+	char	*str1;
+	int 	i;
+	int 	width;
+
+	i = 0;
+	width = map->width;
+	map->map = malloc((map->height + 1) * sizeof(map->map));
+	map->map[map->height] = 0;
+	while (i < map->height)
+	{
+		map->map[i] = malloc((map->width) * sizeof(char *));
+		map->map[i][map->width] = '\0';
+		i++;
+	}
+	close(fd);
+	fd = open(argv, O_RDONLY);
+	i = 0;
+	while (i < map->height)
+	{
+		str = get_next_line(fd);
+		str1 = ft_strtrim(str, "\n"); // Est-ce qu'il s'agit d'une bonne pratique reprendre meme pointeur
+		ft_strlcpy(map->map[i], str1, ft_strlen(str1));
+		free(str);
+		free(str1);
+		str = NULL;
+		str1 = NULL;
+		i++;
+	}
+	printf("%s\n", str);
+	printf("%s\n", str1); // Ce pointeur ne semble pas vouloir free. 
 }
