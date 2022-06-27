@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/26 13:03:46 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:55:43 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,3 +98,45 @@ void	map_malloc(t_var *map, int fd, char *argv)
 	printf("%s\n", str);
 	printf("%s\n", str1); // Ce pointeur ne semble pas vouloir free. 
 }
+
+// void	verify_lines(t_var *map, int *i)
+// {
+// 	int j;
+// 	int c;
+// 	int e;
+// 	int p;
+// 	int o;
+// 	int one;
+
+// 	j = 0;
+// 	c = 0;
+// 	e = 0;
+// 	p = 0;
+// 	o = 0;
+// 	one = 0;
+// 	while (map->map[*i][j])
+// 	{
+// 		if (j == 0 | j == (map->width - 1))
+// 		{
+// 			if (map->map[*i][j] != '1')
+// 				error(ERR_MAP);
+// 		}
+// 		else
+// 		{
+// 			if (map->map[*i][j] == '0')
+// 				o += 1;
+// 			else if (map->map[*i][j] == 'C')
+// 				c += 1;
+// 			else if (map->map[*i][j] == 'E')
+// 				e += 1;
+// 			else if (map->map[*i][j] == 'P')
+// 				p += 1;
+// 			else if (map->map[*i][j] == '1')
+// 				one += 1;
+// 			else
+// 				error(ERR_MAP);
+// 		}
+// 		j++;
+// 	}
+// 	printf("Inside lines of index #%d are valid\n", *i);
+// }

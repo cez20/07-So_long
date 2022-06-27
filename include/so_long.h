@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/26 12:04:37 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/27 14:28:48 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,32 +26,57 @@
 # define ERR_FD "ERROR! Argument(map) does not exist\n"
 # define ERR_EXT "ERROR! Map does not have extension .ber\n"
 # define ERR_MAP "ERROR! Map does not meet basic requirements\n"
+# define ERR_ITEMS "ERROR! There are some mandatory items missing\n"
 
 typedef struct s_var
 {
+	char	**map;
 	int		width;
 	int		height;
-	char	**map;
+	int		pos;
+	int		exit;
+	int 	collectible;
 }				t_var;
 
-typedef struct s_data
+typedef struct s_mlx
 {
+	void	*mlx; // A mettre dans un autre structure?
+	void	*window; // A mettre dans une autre structure? 
 	void	*img;
-	char	*addr;
+	char	*img_addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
+}			t_mlx;
+
+// typedef struct s_data
+// {
+// 	void	*img;
+// 	char	*img_addr;
+// 	int		bits_per_pixel;
+// 	int		line_length;
+// 	int		endian;
+// }				t_data;
 
 // *** MAIN.C ***
 int		main(int argc, char **argv);
-void	map_extension_validation(char *str, int fd);
+void	error(char *str);
 
-// *** PARSING.C ***
-void	map_parsing(t_var *map);
-void	verify_walls(t_var *map, int *i);
+// *** MAP_VALIDATION.C
+void	map_extension_validation(char *str, int fd);
 void	map_size(t_var *map, int fd);
 void	map_malloc(t_var *map, int fd, char *argv);
-void	error(char *str);
+
+// *** MAP_PARSING.C *** 
+void	map_parsing(t_var *map);
+void	verify_map_walls(t_var *map, int *i);
+void	verify_map_lines(t_var *map, int *i);
+void	verify_vertical_wall(t_var *map, int *i, int *j);
+void	verify_map_items(t_var *map, int *i, int *j);
+
+// *** INIT_MLX ***
+void	init_mlx();
+void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+
 
 #endif
