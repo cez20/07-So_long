@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/27 13:59:55 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:20:48 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		map_size(&map, fd);
 		map_malloc(&map, fd, argv[1]);
 		map_parsing(&map);
-		init_mlx();
+		init_mlx(&map);
 	}
 	return (0);
 }

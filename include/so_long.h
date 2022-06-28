@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/27 14:28:48 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:20:25 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	verify_vertical_wall(t_var *map, int *i, int *j);
 void	verify_map_items(t_var *map, int *i, int *j);
 
 // *** INIT_MLX ***
-void	init_mlx();
+void	init_mlx(t_var *map);
 void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 
 
