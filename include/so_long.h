@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/28 13:20:25 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:45:32 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,35 +28,38 @@
 # define ERR_MAP "ERROR! Map does not meet basic requirements\n"
 # define ERR_ITEMS "ERROR! There are some mandatory items missing\n"
 
+typedef struct s_img
+{
+ 	void	*img;
+ 	char	*addr;
+ 	int		bits_per_pixel;
+ 	int		line_length;
+ 	int		endian;
+	int		width;
+	int 	height;
+}				t_img;
+
 typedef struct s_var
 {
 	char	**map;
 	int		width;
 	int		height;
 	int		pos;
-	int		exit;
-	int 	collectible;
+	int		exits;
+	int 	collect;
+	//t_img	*wall; Chacune de ces images pointe vers la struct img ici-bas 
+	//t_img	*floor;
+	//t_img	*collectible;
+	//t_img	*player;
+	//t_img	*exit; 
 }				t_var;
 
 typedef struct s_mlx
 {
 	void	*mlx; // A mettre dans un autre structure?
 	void	*window; // A mettre dans une autre structure? 
-	void	*img;
-	char	*img_addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
 }			t_mlx;
 
-// typedef struct s_data
-// {
-// 	void	*img;
-// 	char	*img_addr;
-// 	int		bits_per_pixel;
-// 	int		line_length;
-// 	int		endian;
-// }				t_data;
 
 // *** MAIN.C ***
 int		main(int argc, char **argv);
@@ -76,7 +79,7 @@ void	verify_map_items(t_var *map, int *i, int *j);
 
 // *** INIT_MLX ***
 void	init_mlx(t_var *map);
-void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+
 
 
 #endif

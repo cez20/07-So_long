@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:33:53 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/27 13:58:49 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:26:04 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	map_size(t_var *map, int fd)
 	free(str);
 	map->width = ft_strlen(str1);
 	free(str1);
-	printf("%d\n", map->width);
 	map->height = 1;
 	while (1)
 	{
@@ -42,7 +41,6 @@ void	map_size(t_var *map, int fd)
 		free(str);
 		map->height++;
 	}
-	printf("%d\n", map->height);
 }
 
 void	map_malloc(t_var *map, int fd, char *argv)
@@ -52,8 +50,8 @@ void	map_malloc(t_var *map, int fd, char *argv)
 	int		i;
 
 	i = 0;
-	map->map = malloc((map->height + 1) * sizeof(map->map));
-	map->map[map->height] = 0;
+	map->map = (char **)malloc((map->height + 1) * sizeof(char *));
+	map->map[map->height] = NULL;
 	close(fd);
 	fd = open(argv, O_RDONLY);
 	while (i < map->height)

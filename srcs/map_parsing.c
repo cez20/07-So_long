@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:41:13 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/27 14:01:43 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/06/29 12:46:42 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	map_parsing(t_var *map)
 			verify_map_lines(map, &i);
 		i++;
 	}
-	if (map->collectible < 1 || map->exit < 1 || map->pos < 1)
+	if (map->collect < 1 || map->exits < 1 || map->pos < 1)
 		error(ERR_ITEMS);
 }
 
@@ -42,7 +42,6 @@ void	verify_map_walls(t_var *map, int *i)
 			error(ERR_MAP);
 		j++;
 	}
-	printf("First and last line of map is valid\n");
 }
 
 void	verify_map_lines(t_var *map, int *i)
@@ -58,7 +57,6 @@ void	verify_map_lines(t_var *map, int *i)
 			verify_map_items(map, i, &j);
 		j++;
 	}
-	printf("Inside lines are valid\n");
 }
 
 void	verify_vertical_wall(t_var *map, int *i, int *j)
@@ -75,9 +73,9 @@ void	verify_map_items(t_var *map, int *i, int *j)
 	if (map->map[*i][*j] == '0' || map->map[*i][*j] == '1')
 		digit += 1;
 	else if (map->map[*i][*j] == 'C')
-		map->collectible = 1;
+		map->collect = 1;
 	else if (map->map[*i][*j] == 'E')
-		map->exit = 1;
+		map->exits = 1;
 	else if (map->map[*i][*j] == 'P')
 		map->pos = 1;
 	else
