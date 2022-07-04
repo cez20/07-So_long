@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/03 23:29:11 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/04 13:57:04 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ typedef struct s_var
 	int		pos;
 	int		exits;
 	int 	collect;
-	t_img	*wall; 
-	t_img	*floor;
-	t_img	*gold;
-	t_img	*player;
-	t_img	*exit; 
+	t_img	wall; 
+	t_img	floor;
+	t_img	player;
+	t_img	gold;
+	t_img	exit; 
 }				t_var;
 
 typedef struct s_mlx
@@ -78,8 +78,9 @@ void	verify_map_lines(t_var *map, int *i);
 void	verify_vertical_wall(t_var *map, int *i, int *j);
 void	verify_map_items(t_var *map, int *i, int *j);
 
-// *** INIT_MLX ***
-void	init_mlx(t_var *map);
+// *** MLX_IMAGES.C ***
+void	load_images(void *mlx, t_var *map);
+void	load_image(void *mlx, char *path, t_img *img);
 
 
 

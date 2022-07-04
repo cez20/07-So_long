@@ -6,11 +6,12 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/03 23:28:40 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/04 14:19:11 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // system_profiler SPDisplaysDataType | grep Resolution
+//man /usr/share/man/man3/mlx
 
 #include "so_long.h"
 
@@ -35,7 +36,8 @@ int	main(int argc, char **argv)
 			error(ERR_WIN);
 		mlx.window = mlx_new_window(mlx.mlx, map.width * 64, map.height * 64, "so_long"); // Cree une nouvelle fenetre
 		img.img = mlx_new_image(mlx.mlx, map.width * 64, map.height * 64); //Cree une nouvelle image de la meme grosseur que la fenetre. 
-		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian);
+		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian); // On obtient l'adresse de l'image complete
+		load_images(mlx.mlx, &map);
 		mlx_loop(mlx.mlx);
 	}
 	return (0);
