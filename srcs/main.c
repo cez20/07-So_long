@@ -6,15 +6,19 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/28 13:20:48 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/03 23:28:40 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// system_profiler SPDisplaysDataType | grep Resolution
 
 #include "so_long.h"
 
 int	main(int argc, char **argv)
 {
 	t_var	map;
+	t_mlx	mlx;
+	t_img	img;
 	int		fd;
 
 	if (argc == 2)
@@ -22,11 +26,17 @@ int	main(int argc, char **argv)
 		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
 			error(ERR_FD);
-		map_extension_validation(argv[1], fd);
+		map_valid_extension(argv[1], fd);
 		map_size(&map, fd);
 		map_malloc(&map, fd, argv[1]);
 		map_parsing(&map);
-		init_mlx(&map);
+		mlx.mlx = mlx_init();
+		if (map.width * 64 > 1920 || map.height * 64 > 1080) // Find a way for computer to detect size of main screen.  
+			error(ERR_WIN);
+		mlx.window = mlx_new_window(mlx.mlx, map.width * 64, map.height * 64, "so_long"); // Cree une nouvelle fenetre
+		img.img = mlx_new_image(mlx.mlx, map.width * 64, map.height * 64); //Cree une nouvelle image de la meme grosseur que la fenetre. 
+		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian);
+		mlx_loop(mlx.mlx);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/29 13:45:32 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/03 23:29:11 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@
 # define ERR_EXT "ERROR! Map does not have extension .ber\n"
 # define ERR_MAP "ERROR! Map does not meet basic requirements\n"
 # define ERR_ITEMS "ERROR! There are some mandatory items missing\n"
+# define ERR_WIN "ERROR! The window is bigger than screen resolution\n"
 
 typedef struct s_img
 {
  	void	*img;
  	char	*addr;
- 	int		bits_per_pixel;
+ 	int		bpp;
  	int		line_length;
  	int		endian;
 	int		width;
@@ -47,11 +48,11 @@ typedef struct s_var
 	int		pos;
 	int		exits;
 	int 	collect;
-	//t_img	*wall; Chacune de ces images pointe vers la struct img ici-bas 
-	//t_img	*floor;
-	//t_img	*collectible;
-	//t_img	*player;
-	//t_img	*exit; 
+	t_img	*wall; 
+	t_img	*floor;
+	t_img	*gold;
+	t_img	*player;
+	t_img	*exit; 
 }				t_var;
 
 typedef struct s_mlx
@@ -66,7 +67,7 @@ int		main(int argc, char **argv);
 void	error(char *str);
 
 // *** MAP_VALIDATION.C
-void	map_extension_validation(char *str, int fd);
+void	map_valid_extension(char *str, int fd);
 void	map_size(t_var *map, int fd);
 void	map_malloc(t_var *map, int fd, char *argv);
 

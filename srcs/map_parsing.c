@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:41:13 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/06/29 12:46:42 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/03 17:03:37 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	map_parsing(t_var *map)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	while (map->map[i])
 	{
 		if (i == 0 || i == (map->height - 1))
@@ -67,11 +65,11 @@ void	verify_vertical_wall(t_var *map, int *i, int *j)
 
 void	verify_map_items(t_var *map, int *i, int *j)
 {
-	int	digit;
+	//int	digit;
 
-	digit = 0;
-	if (map->map[*i][*j] == '0' || map->map[*i][*j] == '1')
-		digit += 1;
+	//digit = 0;
+	if (map->map[*i][*j] == '0' || map->map[*i][*j] == '1');
+		//digit = 1;
 	else if (map->map[*i][*j] == 'C')
 		map->collect = 1;
 	else if (map->map[*i][*j] == 'E')
