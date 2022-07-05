@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/04 14:19:11 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:53:56 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 		img.img = mlx_new_image(mlx.mlx, map.width * 64, map.height * 64); //Cree une nouvelle image de la meme grosseur que la fenetre. 
 		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian); // On obtient l'adresse de l'image complete
 		load_images(mlx.mlx, &map);
+		mlx_loop_hook(mlx.mlx, put_image_on_symbol, &map);// Verifier si map est correct 
 		mlx_loop(mlx.mlx);
 	}
 	return (0);

@@ -6,14 +6,14 @@
 #    By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 13:59:50 by cemenjiv          #+#    #+#              #
-#    Updated: 2022/07/04 13:57:31 by cemenjiv         ###   ########.fr        #
+#    Updated: 2022/07/05 11:29:32 by cemenjiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= so_long  #nom de l'executable que l'on veut creer 
 
 SRCS			= srcs/main.c srcs/map_validation.c srcs/map_parsing.c srcs/mlx_images.c\
-				  gnl/get_next_line.c gnl/get_next_line_utils.c 
+				  srcs/image_to_window.c gnl/get_next_line.c gnl/get_next_line_utils.c 
 
 HEADER			= -Iinclude/ # I means "include" the file name include. If file was named "dir" than it would be -Idir/. Il doit contenir le fichier .h du programme principal.  
 
