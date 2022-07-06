@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_images.c                                       :+:      :+:    :+:   */
+/*   game_images.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:47:19 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/06 11:43:09 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:31:13 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	load_images(void *mlx, t_var *map)
+void	load_images(t_game *game)
 {
-	load_image(mlx, "./sprites/wall.xpm", &map->wall);
-	load_image(mlx, "./sprites/floor.xpm", &map->floor);
-	load_image(mlx, "./sprites/player.xpm", &map->player);
-	load_image(mlx, "./sprites/gold.xpm", &map->gold);
-	load_image(mlx, "./sprites/exit.xpm", &map->exit);
-	image_pixel(&map->wall);
-	image_pixel(&map->floor);
-	image_pixel(&map->player);
-	image_pixel(&map->gold);
-	image_pixel(&map->exit);
+	load_image(game->mlx, "./sprites/wall.xpm", &game->wall);
+	load_image(game->mlx, "./sprites/floor.xpm", &game->floor);
+	load_image(game->mlx, "./sprites/player.xpm", &game->player);
+	load_image(game->mlx, "./sprites/gold.xpm", &game->gold);
+	load_image(game->mlx, "./sprites/exit.xpm", &game->exit);
+	image_pixel(&game->wall);
+	image_pixel(&game->floor);
+	image_pixel(&game->player);
+	image_pixel(&game->gold);
+	image_pixel(&game->exit);
 }
 
 void	load_image(void *mlx, char *path, t_img *img)

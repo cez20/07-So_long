@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:33:53 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/03 23:28:58 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:15:36 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	map_valid_extension(char *str, int fd)
 	}
 }
 
-void	map_size(t_var *map, int fd)
+void	map_size(t_game *map, int fd)
 {
 	char	*str;
 	char	*str1;
@@ -43,22 +43,22 @@ void	map_size(t_var *map, int fd)
 	}
 }
 
-void	map_malloc(t_var *map, int fd, char *argv)
+void	map_malloc(t_game *game, int fd, char *argv)
 {
 	char	*str;
 	int		i;
 
 	i = 0;
-	map->map = malloc((map->height + 1) * sizeof(char *));
-	map->map[map->height] = NULL;
+	game->map = malloc((game->height + 1) * sizeof(char *));
+	game->map[game->height] = NULL;
 	close(fd);
 	fd = open(argv, O_RDONLY);
-	while (i < map->height)
+	while (i < game->height)
 	{
 		str = get_next_line(fd);
-		map->map[i] = ft_strtrim(str, "\n");
+		game->map[i] = ft_strtrim(str, "\n");
 		free (str);
-		if (ft_strlen(map->map[i]) != (size_t)map->width)
+		if (ft_strlen(game->map[i]) != (size_t)game->width)
 			error (ERR_MAP);
 		i++;
 	}
