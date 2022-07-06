@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/05 14:29:12 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/06 14:05:07 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,13 @@ typedef struct s_var
 	t_img	player;
 	t_img	gold;
 	t_img	exit; 
-}				t_var;
+}				t_var; // Change le nom pour t_game.  
 
 typedef struct s_mlx
 {
 	void	*mlx; // A mettre dans un autre structure? Par exemple, t_var
 	void	*window; // A mettre dans une autre structure? 
+	int		count;
 }			t_mlx;
 
 // *** MAIN.C ***
@@ -90,5 +91,9 @@ void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 //*** IMAGE_TO_WINDOW.C 
 int		put_image_on_symbol(t_var *map, t_mlx *mlx);
 void	put_image_to_screen(t_var *map, t_mlx *mlx, int x, int y);
+
+//** MLX_EVENTS.C
+void	mlx_events(t_mlx *mlx);
+int		key_code(int key, int *param);
 
 #endif

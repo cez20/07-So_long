@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:47:19 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/05 14:31:35 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/06 11:43:09 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,21 @@
 
 void	load_images(void *mlx, t_var *map)
 {
-	
 	load_image(mlx, "./sprites/wall.xpm", &map->wall);
 	load_image(mlx, "./sprites/floor.xpm", &map->floor);
 	load_image(mlx, "./sprites/player.xpm", &map->player);
 	load_image(mlx, "./sprites/gold.xpm", &map->gold);
 	load_image(mlx, "./sprites/exit.xpm", &map->exit);
-	image_pixel(&map->player);
 	image_pixel(&map->wall);
 	image_pixel(&map->floor);
+	image_pixel(&map->player);
 	image_pixel(&map->gold);
 	image_pixel(&map->exit);
 }
 
 void	load_image(void *mlx, char *path, t_img *img)
 {
-	
-	printf("%d\n", img->width);
-	printf("%d\n", img->height);
 	img->img = mlx_xpm_file_to_image(mlx, path, &img->width, &img->height);
-	printf("%d\n", img->width);
-	printf("%d\n", img->height);
 	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length, &img->endian);
 }
 
@@ -73,12 +67,6 @@ void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
 	dst = (data->addr + (y * data->line_length + x * data->bpp / 8));
 	*(unsigned int *) dst = color;
 }
-
-
-
-
-
-
 
 
 
