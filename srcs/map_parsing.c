@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:41:13 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/06 18:44:46 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/11 11:48:41 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 // Je devrais normalement passer un double pointeur si je veux que mon pointeur original soit modifie???
 // On pourrait mettre cette fonction ailleurs. Initialize les items a 0;
-void	init_items (t_game *game)
+void	init_items(t_game *game)
 {
 	game->collectibles = 0;
 	game->players = 0;
 	game->exits = 0;
 	game->count = 0;
 	game->player_x = 0;
-	game->player_y= 0;
+	game->player_y = 0;
 }
 
 void	map_parsing(t_game *game)
@@ -39,7 +39,7 @@ void	map_parsing(t_game *game)
 		i++;
 	}
 	if (game->collectibles < 1 || game->exits < 1 || game->players != 1)
-	 	error(ERR_ITEMS);
+		error(ERR_ITEMS);
 }
 
 void	verify_map_walls(t_game *game, int *i)
@@ -78,7 +78,7 @@ void	verify_vertical_wall(t_game *game, int *i, int *j)
 
 void	verify_map_items(t_game **game, int *i, int *j)
 {
-	if ((*game)->map[*i][*j] == '0' || (*game)->map[*i][*j] == '1');
+	if ((*game)->map[*i][*j] == '0' || (*game)->map[*i][*j] == '1'); // Mettre une variable futile ici
 	else if ((*game)->map[*i][*j] == 'C')
 		(*game)->collectibles += 1;
 	else if ((*game)->map[*i][*j] == 'E')

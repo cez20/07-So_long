@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/06 16:15:41 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/11 11:46:45 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int	main(int argc, char **argv)
 		map_malloc(&game, fd, argv[1]);
 		map_parsing(&game);
 		game.mlx = mlx_init();
-		if (game.width * 64 > 1920 || game.height * 64 > 1080) // Find a way for computer to detect size of main screen.  
+		if (game.width * 64 > 800 || game.height * 64 > 600)
 			error(ERR_WIN);
-		game.window = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "so_long"); // Cree une nouvelle fenetre
-		img.img = mlx_new_image(game.mlx, game.width * 64, game.height * 64); //Cree une nouvelle image de la meme grosseur que la fenetre. 
-		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian); // On obtient l'adresse de l'image complete. Est-ce que cette etape est necessaire?
+		game.window = mlx_new_window(game.mlx, game.width * 64, game.height * 64, "so_long");
+		img.img = mlx_new_image(game.mlx, game.width * 64, game.height * 64);
+		img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_length, &img.endian);
 		load_images(&game);
 		mlx_events(&game);
 		mlx_loop_hook(game.mlx, put_image_on_symbol, &game);// Verifier si map est correct 
