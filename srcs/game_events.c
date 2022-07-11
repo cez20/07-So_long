@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:58:02 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 11:41:42 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/11 17:52:33 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	quit(t_game *game)
 {
 	if (game->collectibles == 0)
-		close_window();
+		close_window(game);
 }
 
 void	change_tile(t_game **game, int x, int y) // Voir si je peux passer un simple pointeur. 
@@ -53,16 +53,16 @@ void	move_player(t_game *game, int a, int b)
 	}
 }
 
-int	close_window(void)
+int	close_window(t_game *game)
 {
+	free_game(game);
 	exit(EXIT_FAILURE);
-	return (0);
 }
 
 int	key_code(int key, t_game *game)
 {
 	if (key == 53) // Est-ce que ceci est considere comme quitte clean. On je dois free tout avant. 
-		close_window();
+		close_window(game);
 	else if(key == 0)
 		move_player(game, 0, -1);
 	else if (key == 1)
@@ -77,4 +77,5 @@ int	key_code(int key, t_game *game)
 void	mlx_events(t_game *game)
 {
 	mlx_key_hook(game->window, key_code, game);
+	mlx_hook(game->window, 17, 0, close_window, game); //mlx);
 }
