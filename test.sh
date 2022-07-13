@@ -4,7 +4,7 @@ make re
 make clean
 
 # ------------------------------------ERRORS----------------------------------- 
-printf "\033[1;32m----------------------------ERROR TEST----------------------------\n\n\033[1;0m"
+printf "\033[1;32m----------------------------ERROR TEST WHEN 1 PARAMETER----------------------------\n\n\033[1;0m"
 
 printf "\033[1;33m--------------RUNNING A MAP WITH NO EXTENSION .BER --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
@@ -16,11 +16,30 @@ printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_wrong_length.ber \n\033[1;0m"
 ./so_long ./maps/map_wrong_length.ber
 
-
-printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING SURRONDING WALLS --------------\n\033[1;0m"
+printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING SURROUNDING WALLS --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_no_walls.ber \n\033[1;0m"
 ./so_long ./maps/map_no_walls.ber
+
+printf "\n\033[1;33m--------------RUNNING A MAP WITH EMPTY .BER MAP --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_completely_empty.ber \n\033[1;0m"
+./so_long ./maps/map_completely_empty.ber
+
+printf "\n\033[1;33m--------------RUNNING A MAP WITH EMPTY LINE (BEGINNING) .BER MAP --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_empty_line.ber \n\033[1;0m"
+./so_long ./maps/map_empty_line.ber
+
+printf "\n\033[1;33m--------------RUNNING A MAP WITH EMPTY LINE (MIDDLE) .BER MAP --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_empty_line1.ber \n\033[1;0m"
+./so_long ./maps/map_empty_line1.ber
+
+printf "\n\033[1;33m--------------RUNNING A MAP WITH UNKNOWN ITEM IN MAP --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_unknown_item.ber \n\033[1;0m"
+./so_long ./maps/map_unknown_item.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING COLLECTIBLES (C) item --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
@@ -42,23 +61,17 @@ printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_no_position.ber \n\033[1;0m"
 ./so_long ./maps/map_xlarge.ber
 
-# ------------------------------------VERIFICATIONS----------------------------------- 
-printf "\033[1;32m----------------------------FD STILL OPEN TEST----------------------------\n\n\033[1;0m"
+printf "\033[1;32m----------------------------ERROR TEST WHEN 0 OR TOO MANY PARAMETERS----------------------------\n\n\033[1;0m"
 
-printf "\033[1;33m--------------MAKING SURE THAT NO FD IS STILL OPEN --------------\n\033[1;0m"
-printf "\033[1;31m--------------FD OPEN SHOULD BE 3 (STD)--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH valgrind --track-fds=yes ./so_long ./maps/map_small.ber \n\033[1;0m"
-valgrind --track-fds=yes ./so_long ./maps/map_small.ber || grep 'FILE DESCRIPTORS'
+printf "\033[1;33m--------------RUNNING PROGRAM WITH NO ARGUMENTS --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map.bra \n\033[1;0m"
+./so_long 
 
-
-printf "\033[1;32m----------------------------LEAKS----------------------------\n\n\033[1;0m"
-
-printf "\033[1;33m--------------MAKING SURE THAT NO FD IS STILL OPEN --------------\n\033[1;0m"
-printf "\033[1;31m--------------FD OPEN SHOULD BE 3 (STD)--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH valgrind --track-fds=yes ./so_long ./maps/map_small.ber \n\033[1;0m"
-
-
-
+printf "\033[1;33m--------------RUNNING PROGRAM WITH MORE THAN 1 ARGUMENT --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map.bra \n\033[1;0m"
+./so_long ./maps/map_small.ber ./map_large.ber
 
 # ------------------------------------REGULAR TESTS----------------------------------- 
 printf "\033[1;32m----------------------------REGULAR TESTS GAME RESPECTING REQUIREMENTS----------------------------\n\n\033[1;0m"

@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:58:02 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/12 12:06:53 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/13 15:17:13 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	move_player(t_game *game, int a, int b)
 int	close_window(t_game *game)
 {
 	free_game(game);
-	exit(EXIT_SUCCESS);
+	exit(EXIT_SUCCESS); // ESt-ce necessaire de le remplacer par EXIt_SUCCESS? 
 }
 
 int	key_code(int key, t_game *game)

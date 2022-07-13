@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:33:53 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/12 13:06:03 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:05:38 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ void	map_size(t_game *map, int fd)
 		error(ERR_EMPTY_LINE);
 	str1 = ft_strtrim(str, "\n");
 	free(str);
+	str = NULL; // Avoid dangling pointer
 	map->width = ft_strlen(str1);
 	free(str1);
+	str1 = NULL; // Avoid dangling pointer 
 	map->height = 1;
 	while (1)
 	{
@@ -41,6 +43,7 @@ void	map_size(t_game *map, int fd)
 		if (!str)
 			break ;
 		free(str);
+		str = NULL;
 		map->height++;
 	}
 }
@@ -52,8 +55,8 @@ void	map_malloc(t_game *game, int fd, char *argv)
 
 	i = 0;
 	game->map = malloc((game->height + 1) * sizeof(char *));
-	if (!game->map)
-		return ;
+	if (!game->map) // P-e a enlever
+		error(ERR_EMPTY_LINE); //P-e a enlever
 	game->map[game->height] = 0;
 	close(fd);
 	fd = open(argv, O_RDONLY);
@@ -62,6 +65,7 @@ void	map_malloc(t_game *game, int fd, char *argv)
 		str = get_next_line(fd);
 		game->map[i] = ft_strtrim(str, "\n");
 		free (str);
+		str = NULL;
 		if (ft_strlen(game->map[i]) != (size_t)game->width)
 			error (ERR_LENGTH);
 		i++;

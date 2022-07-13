@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/12 13:07:38 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/13 16:42:04 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx/mlx.h"
-//# include <mlx.h> //Cette facon devrait aussi fonctionner si ../minilibx/mlx.h ne fonctionne pas. 
+//# include <mlx.h> //Cette facon devrait aussi fonctionner si ../minilibx/mlx.h ne fonctionne pas.
 
+# define ERR_ARGS "There is NO arguments or more than 1 argument\n"
 # define ERR_FD "FD(map) given does not exist!\n"
 # define ERR_EXT "Map does not have extension '.ber'!\n"
 # define ERR_LENGTH "Map lines are NOT the same length!\n"
@@ -59,7 +60,7 @@ typedef struct s_game
 	int		count;
 	int		player_x;
 	int 	player_y;
-}				t_game; // Change le nom pour t_game.  
+}				t_game; 
 
 // *** MAIN.C ***
 int		main(int argc, char **argv);
