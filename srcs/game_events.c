@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:58:02 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 17:52:33 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/12 12:06:53 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	move_player(t_game *game, int a, int b)
 int	close_window(t_game *game)
 {
 	free_game(game);
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }
 
 int	key_code(int key, t_game *game)
@@ -77,5 +77,5 @@ int	key_code(int key, t_game *game)
 void	mlx_events(t_game *game)
 {
 	mlx_key_hook(game->window, key_code, game);
-	mlx_hook(game->window, 17, 0, close_window, game); //mlx);
+	mlx_hook(game->window, 17, 0, close_window, game);
 }

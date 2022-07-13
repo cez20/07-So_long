@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:33:53 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 19:18:55 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:06:03 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	map_size(t_game *map, int fd)
 	char	*str1;
 
 	str = get_next_line(fd);
+	if (!str)
+		error(ERR_EMPTY_LINE);
 	str1 = ft_strtrim(str, "\n");
 	free(str);
 	map->width = ft_strlen(str1);
@@ -50,7 +52,9 @@ void	map_malloc(t_game *game, int fd, char *argv)
 
 	i = 0;
 	game->map = malloc((game->height + 1) * sizeof(char *));
-	game->map[game->height] = NULL;
+	if (!game->map)
+		return ;
+	game->map[game->height] = 0;
 	close(fd);
 	fd = open(argv, O_RDONLY);
 	while (i < game->height)

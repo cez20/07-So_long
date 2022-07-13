@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:07:11 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 19:19:00 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:05:36 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	error(char *str)
 {
+	write(2, "Error\n", 6);
 	write(2, str, ft_strlen(str));
 	exit(EXIT_FAILURE);
 }

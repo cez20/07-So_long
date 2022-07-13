@@ -6,11 +6,9 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 19:43:33 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:01:57 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// system_profiler SPDisplaysDataType | grep Resolution
 
 #include "so_long.h"
 
@@ -39,10 +37,6 @@ int	main(int argc, char **argv)
 		mlx_events(&game);
 		mlx_loop_hook(game.mlx, put_image_on_symbol, &game);// Verifier si map est correct 
 		mlx_loop(game.mlx);
-		free_game (&game);
 	}
 	return (0);
 }
-
-//Another name for map_size could be map_width_height.
-// Je vais verifier s'il vaudrait la peine de mettre fd dans la struct t_var

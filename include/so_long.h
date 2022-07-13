@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 19:43:22 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/12 13:07:38 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h> 
-# include <stdio.h> // Important de l'enlever sauf si on utilise perror
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 # include "../minilibx/mlx.h"
 //# include <mlx.h> //Cette facon devrait aussi fonctionner si ../minilibx/mlx.h ne fonctionne pas. 
 
-# define ERR_FD "ERROR! FD(map) given does not exist\n"
-# define ERR_EXT "ERROR! Map does not have extension .ber\n"
-# define ERR_LENGTH "ERROR! Map lines are NOT the same length\n"
-# define ERR_MAP "ERROR! Map does not meet basic requirements\n"
-# define ERR_ITEMS "ERROR! There are some mandatory items missing\n"
-# define ERR_WIN "ERROR! The window is bigger than screen resolution\n"
+# define ERR_FD "FD(map) given does not exist!\n"
+# define ERR_EXT "Map does not have extension '.ber'!\n"
+# define ERR_LENGTH "Map lines are NOT the same length!\n"
+# define ERR_EMPTY_LINE "There is an empty line in file!\n"
+# define ERR_MAP "Map does not meet basic requirements!\n"
+# define ERR_ITEMS "There are some mandatory items missing!\n"
+# define ERR_WIN "The window is bigger than screen resolution!\n"
 
 typedef struct s_img
 {
@@ -102,7 +102,5 @@ int 	mouse_code(int button, int x, int y, void *param);
 void	error(char *str);
 void	free_game(t_game *game);
 void	init_items (t_game *game);
-
-
 
 #endif

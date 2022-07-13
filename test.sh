@@ -42,19 +42,42 @@ printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_no_position.ber \n\033[1;0m"
 ./so_long ./maps/map_xlarge.ber
 
+# ------------------------------------VERIFICATIONS----------------------------------- 
+printf "\033[1;32m----------------------------FD STILL OPEN TEST----------------------------\n\n\033[1;0m"
+
+printf "\033[1;33m--------------MAKING SURE THAT NO FD IS STILL OPEN --------------\n\033[1;0m"
+printf "\033[1;31m--------------FD OPEN SHOULD BE 3 (STD)--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH valgrind --track-fds=yes ./so_long ./maps/map_small.ber \n\033[1;0m"
+valgrind --track-fds=yes ./so_long ./maps/map_small.ber || grep 'FILE DESCRIPTORS'
+
+
+printf "\033[1;32m----------------------------LEAKS----------------------------\n\n\033[1;0m"
+
+printf "\033[1;33m--------------MAKING SURE THAT NO FD IS STILL OPEN --------------\n\033[1;0m"
+printf "\033[1;31m--------------FD OPEN SHOULD BE 3 (STD)--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH valgrind --track-fds=yes ./so_long ./maps/map_small.ber \n\033[1;0m"
+
+
+
 
 # ------------------------------------REGULAR TESTS----------------------------------- 
-printf "\033[1;32m----------------------------REGULAR TESTS WITH GAME RESPECTING REQUIREMENTS----------------------------\n\n\033[1;0m"
+printf "\033[1;32m----------------------------REGULAR TESTS GAME RESPECTING REQUIREMENTS----------------------------\n\n\033[1;0m"
 
-printf "\033[1;33m--------------RUNNING A SMALL MAP WITH CORRECT REQUIREMENTS --------------\n\033[1;0m"
+printf "\033[1;33m--------------RUNNING A SMALL HORIZONTAL MAP WITH CORRECT REQUIREMENTS --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_small.ber \n\033[1;0m"
 ./so_long ./maps/map_small.ber
 
-sleep 3
+sleep 2
+printf "\033[1;33m--------------RUNNING A SMALL VERTICAL MAP WITH CORRECT REQUIREMENTS --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_small.ber \n\033[1;0m"
+./so_long ./maps/map_vertical.ber
+
+sleep 2
 printf "\033[1;33m--------------RUNNING A LARGE MAP WITH CORRECT REQUIREMENTS --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map_large.ber \n\033[1;0m"
 ./so_long ./maps/map_large.ber
 
-
+make fclean
