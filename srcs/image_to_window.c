@@ -6,14 +6,12 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:33:28 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 11:44:36 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/14 13:25:05 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-// SI on met des else if partout, les images s'affiche presque au complet. P-e faire des images d'avance
 void	put_image_to_screen(t_game *game, int x, int y)
 {
 	if (game->map[y][x] == '1')

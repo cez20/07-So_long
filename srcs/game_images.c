@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 13:47:19 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/11 14:15:25 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/14 13:24:45 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	load_images(t_game *game)
 void	load_image(void *mlx, char *path, t_img *img)
 {
 	img->img = mlx_xpm_file_to_image(mlx, path, &img->width, &img->height);
-	img->addr = mlx_get_data_addr(img->img, &img->bpp, &img->line_length, &img->endian); // Separer cette ligne 
+	img->addr = mlx_get_data_addr(img->img, &img->bpp, \
+	&img->line_length, &img->endian);
 }
 
 void	image_pixel(t_img *image)
@@ -45,7 +46,7 @@ void	image_pixel(t_img *image)
 		while (x < image->width)
 		{
 			color = get_colors(image, x, y);
-			my_mlx_pixel_put(image, x, y, color); // Mettre &image au lieu de image
+			my_mlx_pixel_put(image, x, y, color);
 			x++;
 		}
 		y++;
