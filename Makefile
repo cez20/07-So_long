@@ -6,15 +6,17 @@
 #    By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 13:59:50 by cemenjiv          #+#    #+#              #
-#    Updated: 2022/07/14 13:23:11 by cemenjiv         ###   ########.fr        #
+#    Updated: 2022/07/23 11:47:31 by cemenjiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= so_long  #nom de l'executable que l'on veut creer 
 
-SRCS			= srcs/main.c srcs/map_validation.c srcs/map_parsing.c srcs/game_images.c \
+#SRCS			= srcs/main.c srcs/map_validation.c srcs/map_parsing.c srcs/game_images.c \
 				  srcs/image_to_window.c srcs/game_events.c srcs/utils.c srcs/game_quit.c \
 				  gnl/get_next_line.c gnl/get_next_line_utils.c 
+
+SRCS			= $(wildcard srcs/*.c) $(wildcard gnl/*.c)
 
 HEADER			= -Iinclude/ # I means "include" the file name include. If file was named "dir" than it would be -Idir/. Il doit contenir le fichier .h du programme principal.  
 
@@ -53,4 +55,4 @@ fclean:			clean #the target is do the instructions under clean and then the inst
 				
 re:				fclean all #does the instruction of "fclean", which are to remove everything and then does the instructions of "all"
 				
-
+.PHONY:			all clean fclean re

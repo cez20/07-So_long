@@ -61,10 +61,15 @@ printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map.ber \n\033[1;0m"
 ./so_long ./tests/map.ber
 
-printf "\n\033[1;33m--------------RUNNING A MAP TOO BIG FOR SCREEN RESOLUTION --------------\n\033[1;0m"
+printf "\n\033[1;33m--------------RUNNING AN HORIZONTAL MAP TOO BIG FOR SCREEN RESOLUTION --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
 printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_xlarge.ber \n\033[1;0m"
-./so_long ./tests/map_xlarge.ber
+./so_long ./tests/map_horizontal_xlarge.ber
+
+printf "\n\033[1;33m--------------RUNNING AN VERTICAL MAP TOO BIG FOR SCREEN RESOLUTION --------------\n\033[1;0m"
+printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_xlarge.ber \n\033[1;0m"
+./so_long ./tests/map_vertical_xlarge.ber
 
 
 

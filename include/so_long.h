@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 14:31:32 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/25 09:43:28 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 # include <stdlib.h> 
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
-# include "../minilibx/mlx.h"
-//# include <mlx.h> //Cette facon devrait aussi fonctionner 
+# include <mlx.h> 
 
 # define ERR_ARGS "There is NO arguments or more than 1 argument\n"
 # define ERR_FD "FD(map) given does not exist!\n"
@@ -44,6 +43,7 @@ typedef struct s_img
 
 typedef struct s_game
 {
+	int		fd;
 	char	**map;
 	int		width;
 	int		height;

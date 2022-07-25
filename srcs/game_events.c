@@ -6,13 +6,13 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:58:02 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 13:22:53 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/25 09:33:33 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	change_tile(t_game **game, int x, int y) //Voir si je peux passer un simple pointeur
+void	change_tile(t_game **game, int x, int y)
 {
 	(*game)->map[(*game)->player_x][(*game)->player_y] = '0';
 	(*game)->map[x][y] = 'P';
