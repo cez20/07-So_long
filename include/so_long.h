@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/25 09:43:28 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:45:59 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void			put_image_to_screen(t_game *game, int x, int y);
 //** GAME_EVENTS.C
 void			mlx_events(t_game *game);
 int				key_code(int key, t_game *game);
-int				close_window(t_game *game);
 void			change_tile(t_game **game, int x, int y);
 void			move_player(t_game *game, int a, int b);
 

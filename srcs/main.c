@@ -6,16 +6,16 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/25 09:54:06 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:17:20 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include <stdio.h>  // A enlever 
 
 int	main(int argc, char **argv)
 {
 	t_game	game;
-	t_img	img;
 
 	if (argc != 2)
 		error(ERR_ARGS);
@@ -31,9 +31,6 @@ int	main(int argc, char **argv)
 		error(ERR_WIN);
 	game.window = mlx_new_window(game.mlx, game.width * 64, \
 	game.height * 64, "so_long");
-	img.img = mlx_new_image(game.mlx, game.width * 64, game.height * 64);
-	img.addr = mlx_get_data_addr(img.img, &img.bpp, \
-	&img.line_length, &img.endian);
 	load_images(&game);
 	mlx_events(&game);
 	mlx_loop_hook(game.mlx, put_image_on_symbol, &game);

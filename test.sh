@@ -68,7 +68,7 @@ printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_xlarg
 
 printf "\n\033[1;33m--------------RUNNING AN VERTICAL MAP TOO BIG FOR SCREEN RESOLUTION --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_xlarge.ber \n\033[1;0m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_vertical_xlarge.ber \n\033[1;0m"
 ./so_long ./tests/map_vertical_xlarge.ber
 
 
@@ -80,7 +80,7 @@ printf "\n\n\033[1;32m----------------------------ERROR TEST WHEN 0 OR TOO MANY 
 
 printf "\033[1;33m--------------RUNNING PROGRAM WITH NO ARGUMENTS --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map.bra \n\033[1;0m"
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long \n\033[1;0m"
 ./so_long 
 
 printf "\033[1;33m--------------RUNNING PROGRAM WITH MORE THAN 1 ARGUMENT --------------\n\033[1;0m"

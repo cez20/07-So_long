@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 13:22:05 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 13:23:25 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:28:05 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	quit(t_game *game)
 int	close_window(t_game *game)
 {
 	free_game(game);
-	exit(EXIT_SUCCESS);
+	mlx_destroy_window(game->mlx, game->window); // a valider si c'est ok
+	exit(EXIT_FAILURE);
 }

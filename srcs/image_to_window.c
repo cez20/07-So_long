@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:33:28 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 13:25:05 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:47:51 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	put_image_on_symbol(t_game *game)
 	int	j;
 
 	j = 0;
-	while (game->map[j])
+	while (game->map[j] && game->map)
 	{
 		i = 0;
-		while (game->map[j][i])
+		while (game->map[j][i] && game->map)
 		{
 			put_image_to_screen(game, i, j);
 			i++;
