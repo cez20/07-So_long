@@ -6,7 +6,7 @@
 #    By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 13:59:50 by cemenjiv          #+#    #+#              #
-#    Updated: 2022/07/23 11:47:31 by cemenjiv         ###   ########.fr        #
+#    Updated: 2022/07/25 10:26:40 by cemenjiv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ HEADER			= -Iinclude/ # I means "include" the file name include. If file was nam
 
 LIBFT 			= -Llibft -lft
 
-MLX				= -Lminilibx -lmlx -framework OpenGL -framework AppKit -o
+MLX				= -lmlx -framework OpenGL -framework AppKit -o
   	  
 OBJS			= $(SRCS:.c=.o) # This line means take the variable {SRCS} which is a string composed of words separated by space. For each words separate suffix .c by .o
 
