@@ -85,8 +85,8 @@ printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long \n\033[1;0m"
 
 printf "\033[1;33m--------------RUNNING PROGRAM WITH MORE THAN 1 ARGUMENT --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/map.bra \n\033[1;0m"
-./so_long ./maps/map_small.ber ./map_large.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long maps/map_small.ber maps/map_large.ber \n\033[1;0m"
+./so_long maps/map_small.ber maps/map_large.ber
 
 
 
