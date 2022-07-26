@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/25 14:45:59 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/26 14:27:17 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,7 @@ void			verify_vertical_wall(t_game *game, int *i, int *j);
 void			verify_map_items(t_game **game, int *i, int *j);
 
 // *** GAME_IMAGES.C ***
-void			nb_of_collectibles(t_game *game);
 void			load_images(t_game *game);
-void			load_image(void *mlx, char *path, t_img *img);
-void			image_pixel(t_img *image);
-unsigned int	get_colors(t_img *data, int x, int y);
-void			my_mlx_pixel_put(t_img *data, int x, int y, int color);
 
 //*** IMAGE_TO_WINDOW.C 
 int				put_image_on_symbol(t_game *game);
