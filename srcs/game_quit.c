@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 13:22:05 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/26 11:17:26 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/26 14:18:57 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ void	quit(t_game *game)
 int	close_window(t_game *game)
 {
 	free_game(game);
+	mlx_destroy_image(game->mlx, game->wall.img);
+	mlx_destroy_image(game->mlx, game->floor.img);
+	mlx_destroy_image(game->mlx, game->player.img);
+	mlx_destroy_image(game->mlx, game->gold.img);
+	mlx_destroy_image(game->mlx, game->exit.img);
 	mlx_destroy_window(game->mlx, game->window);
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }

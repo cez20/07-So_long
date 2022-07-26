@@ -6,12 +6,11 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/25 17:17:20 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2022/07/26 14:18:23 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>  // A enlever 
 
 int	main(int argc, char **argv)
 {
