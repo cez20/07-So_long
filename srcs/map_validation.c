@@ -6,11 +6,11 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:33:53 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 13:29:13 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:59:49 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	map_valid_extension(char *str, int fd)
 {

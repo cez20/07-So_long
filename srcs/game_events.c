@@ -6,11 +6,11 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:58:02 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/26 14:18:33 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:00:08 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	change_tile(t_game **game, int x, int y)
 {

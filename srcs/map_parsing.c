@@ -6,11 +6,11 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:41:13 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 13:28:36 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:00:26 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	map_parsing(t_game *game)
 {

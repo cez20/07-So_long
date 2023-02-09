@@ -6,11 +6,11 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 13:22:05 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/26 14:18:57 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:00:15 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	quit(t_game *game)
 {

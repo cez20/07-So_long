@@ -6,11 +6,11 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:07:11 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/14 13:29:29 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:00:34 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	error(char *str)
 {
