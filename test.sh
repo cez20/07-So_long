@@ -8,68 +8,68 @@ printf "\033[1;32m----------------------------ERROR TEST WHEN 1 PARAMETER-------
 
 printf "\033[1;33m--------------RUNNING A MAP WITH NO EXTENSION .BER --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map.bra \n\033[1;0m"
-./so_long ./tests/map.bra
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map.bra \n\033[1;0m"
+./so_long ./maps/invalid_maps/map.bra
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH LINES THAT ARE NOT SAME LENGTH --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_wrong_length.ber \n\033[1;0m"
-./so_long ./tests/map_wrong_length.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_wrong_length.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_wrong_length.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING SURROUNDING WALLS --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_no_walls.ber \n\033[1;0m"
-./so_long ./tests/map_no_walls.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_no_walls.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_no_walls.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH EMPTY .BER MAP --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_completely_empty.ber \n\033[1;0m"
-./so_long ./tests/map_completely_empty.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_completely_empty.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_completely_empty.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH EMPTY LINE (BEGINNING) .BER MAP --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_empty_line.ber \n\033[1;0m"
-./so_long ./tests/map_empty_line.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_empty_line.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_empty_line.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH EMPTY LINE (MIDDLE) .BER MAP --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_empty_line1.ber \n\033[1;0m"
-./so_long ./tests/map_empty_line1.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_empty_line1.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_empty_line1.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH UNKNOWN ITEM IN MAP --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_unknown_item.ber\n\033[1;0m"
-./so_long ./tests/map_unknown_item.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_unknown_item.ber\n\033[1;0m"
+./so_long ./maps/invalid_maps/map_unknown_item.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING COLLECTIBLES (C) item --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_no_collectibles.ber \n\033[1;0m"
-./so_long ./tests/map_no_collectibles.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_no_collectibles.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_no_collectibles.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING EXIT (E) item --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_no_exit.ber \n\033[1;0m"
-./so_long ./tests/map_no_exit.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_no_exit.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_no_exit.ber
 
 printf "\n\033[1;33m--------------RUNNING A MAP WITH MISSING DEPARTURE POSITION (P) item --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map_no_position.ber \n\033[1;0m"
-./so_long ./tests/map_no_position.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map_no_position.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_no_position.ber
 
 printf "\n\033[1;33m--------------RUNNING A DIRECTORY named map.ber --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./tests/map.ber \n\033[1;0m"
-./so_long ./tests/map.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./maps/invalid_maps/map.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map.ber
 
 printf "\n\033[1;33m--------------RUNNING AN HORIZONTAL MAP TOO BIG FOR SCREEN RESOLUTION --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_xlarge.ber \n\033[1;0m"
-./so_long ./tests/map_horizontal_xlarge.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./maps/invalid_maps/map_xlarge.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_horizontal_xlarge.ber
 
 printf "\n\033[1;33m--------------RUNNING AN VERTICAL MAP TOO BIG FOR SCREEN RESOLUTION --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
-printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./tests/map_vertical_xlarge.ber \n\033[1;0m"
-./so_long ./tests/map_vertical_xlarge.ber
+printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long ./so_long ./maps/invalid_maps/map_vertical_xlarge.ber \n\033[1;0m"
+./so_long ./maps/invalid_maps/map_vertical_xlarge.ber
 
 
 
@@ -92,8 +92,8 @@ printf "\033[1;34mSCRIPT TEST IS DONE WITH ./so_long maps/map_small.ber maps/map
 
 
 
-# ------------------------------------REGULAR TESTS----------------------------------- 
-printf "\n\n\033[1;32m----------------------------REGULAR TESTS GAME RESPECTING REQUIREMENTS----------------------------\n\n\033[1;0m"
+# ------------------------------------REGULAR maps/invalid_maps----------------------------------- 
+printf "\n\n\033[1;32m----------------------------REGULAR maps/invalid_maps GAME RESPECTING REQUIREMENTS----------------------------\n\n\033[1;0m"
 
 printf "\033[1;33m--------------RUNNING A SMALL HORIZONTAL MAP WITH CORRECT REQUIREMENTS --------------\n\033[1;0m"
 printf "\033[1;31m--------------SHOULD BE AN ERROR--------------\n\033[1;33m"
