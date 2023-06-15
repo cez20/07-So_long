@@ -1,58 +1,40 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/28 13:59:50 by cemenjiv          #+#    #+#              #
-#    Updated: 2022/07/25 10:26:40 by cemenjiv         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME     = so_long
 
-NAME			= so_long  #nom de l'executable que l'on veut creer 
+SRCS     = srcs/main.c srcs/map_validation.c srcs/map_parsing.c srcs/game_images.c \
+           srcs/image_to_window.c srcs/game_events.c srcs/utils.c srcs/game_quit.c \
+           gnl/get_next_line.c gnl/get_next_line_utils.c
 
-#SRCS			= srcs/main.c srcs/map_validation.c srcs/map_parsing.c srcs/game_images.c \
-				  srcs/image_to_window.c srcs/game_events.c srcs/utils.c srcs/game_quit.c \
-				  gnl/get_next_line.c gnl/get_next_line_utils.c 
+HEADER   = -Iinclude/
 
-SRCS			= $(wildcard srcs/*.c) $(wildcard gnl/*.c)
+LIBFT    = -Llibft -lft
 
-HEADER			= -Iinclude/ # I means "include" the file name include. If file was named "dir" than it would be -Idir/. Il doit contenir le fichier .h du programme principal.  
+MLX      = -Lminilibx -lmlx -framework OpenGL -framework AppKit
 
+OBJS     = $(SRCS:.c=.o)
 
-LIBFT 			= -Llibft -lft
+CC       = gcc 
+CFLAGS   = -Wall -Wextra -Werror -g  
+RM       = rm -f 
 
-MLX				= -lmlx -framework OpenGL -framework AppKit -o
-  	  
-OBJS			= $(SRCS:.c=.o) # This line means take the variable {SRCS} which is a string composed of words separated by space. For each words separate suffix .c by .o
+.c.o:
+	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 
+all: $(NAME)
 
-CC				= gcc  #name of C compiler
-CFLAGS			= -Wall -Wextra -Werror -g  #nom des differents flags a utiliser 
-RM				= rm -f  #shortcut Rm fait ce que fait normalement rm -f 
+$(NAME): $(OBJS)
+	make bonus -C ./libft
+	make -C ./minilibx
+	$(CC) $(OBJS) $(LIBFT) $(MLX) -o $(NAME)
 
-# .c.o is a canned rule for translating .c files to .o
-# $< means the first prerequisite.  
-.c.o:		
-				${CC} ${CFLAGS} ${HEADER} -c $< -o $(<:.c=.o)
- 	
-all:			$(NAME)  #commande all cree le target suivant $NAME. Il va creer un fichier qui va creer toutes les instructions qui sont sous ${NAME}
+clean:
+	make clean -C ./libft
+	make clean -C ./minilibx
+	$(RM) $(OBJS)
 
-##-L libft means looks in directory "libft" for library files, then "-l" means links with library file that ends with ft (Ex: libft) and create a object file called NAME
-# make bonus -C means make the bonus rule of Makefile that can be found in directory called "libft"
-$(NAME):		$(OBJS)  #Convertis tous les fichiers sources (.c) and fichier objet (.o)
-				$(MAKE) bonus -C ./libft 
-				${CC} ${OBJS} ${LIBFT} ${MLX} $(NAME)
-	
-clean:		    # This does not create a target as the instructions are below. We only mention the different steps to do 
-				$(MAKE) clean -C ./libft
-				$(RM) $(OBJS)
-				
-fclean:			clean #the target is do the instructions under clean and then the instruction below. 
-				$(MAKE) fclean -C ./libft
-				$(RM) $(NAME)
-				
-re:				fclean all #does the instruction of "fclean", which are to remove everything and then does the instructions of "all"
-				
-.PHONY:			all clean fclean re
+fclean: clean
+	make fclean -C ./libft
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
