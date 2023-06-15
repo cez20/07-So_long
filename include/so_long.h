@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2023/06/15 18:50:14 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/06/15 19:03:02 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h> 
-# include "../gnl/get_next_line.h"
+# include "gnl/get_next_line.h"
 # include "libft/libft.h"
 # include "minilibx/mlx.h"
 
