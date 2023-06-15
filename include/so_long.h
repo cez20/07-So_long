@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:04:51 by cemenjiv          #+#    #+#             */
-/*   Updated: 2022/07/26 14:27:17 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/06/15 13:17:39 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h> 
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
-# include <mlx.h> 
+# include "../minilibx/mlx.h"
 
 # define ERR_ARGS "There is NO arguments or more than 1 argument\n"
 # define ERR_FD "FD(map) given does not exist!\n"

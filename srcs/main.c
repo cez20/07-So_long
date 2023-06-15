@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 15:20:45 by cemenjiv          #+#    #+#             */
-/*   Updated: 2023/02/09 10:59:31 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/06/14 21:01:24 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	map_malloc(&game, game.fd, argv[1]);
 	map_parsing(&game);
 	game.mlx = mlx_init();
-	if (game.width * 64 > 1920 || game.height * 64 > 1080)
+	if (game.width * 64 > 1080 || game.height * 64 > 720)   //
 		error(ERR_WIN);
 	game.window = mlx_new_window(game.mlx, game.width * 64, \
 	game.height * 64, "so_long");

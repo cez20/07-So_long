@@ -6,7 +6,7 @@
 /*   By: cemenjiv <cemenjiv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 11:41:13 by cemenjiv          #+#    #+#             */
-/*   Updated: 2023/02/09 11:00:26 by cemenjiv         ###   ########.fr       */
+/*   Updated: 2023/06/14 20:53:43 by cemenjiv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,5 @@ void	verify_map_items(t_game **game, int *i, int *j)
 	}
 	else
 		error(ERR_MAP);
+	digit++;
 }
