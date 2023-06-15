@@ -8,7 +8,7 @@ HEADER   = -Iinclude/
 
 LIBFT    = -Linclude/libft -lft
 
-MLX      = -Lminilibx -lmlx -framework OpenGL -framework AppKit
+MLX      = -Linclude/minilibx -lmlx -framework OpenGL -framework AppKit
 
 OBJS     = $(SRCS:.c=.o)
 
@@ -23,16 +23,16 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make bonus -C ./include/libft
-	make -C ./minilibx
+	make -C ./include/minilibx
 	$(CC) $(OBJS) $(LIBFT) $(MLX) -o $(NAME)
 
 clean:
-	make clean -C ./libft
-	make clean -C ./minilibx
+	make clean -C ./include/libft
+	make clean -C ./include/minilibx
 	$(RM) $(OBJS)
 
 fclean: clean
-	make fclean -C ./libft
+	make fclean -C ./include/libft
 	$(RM) $(NAME)
 
 re: fclean all
