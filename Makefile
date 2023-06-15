@@ -6,7 +6,7 @@ SRCS     = srcs/main.c srcs/map_validation.c srcs/map_parsing.c srcs/game_images
 
 HEADER   = -Iinclude/
 
-LIBFT    = -Llibft -lft
+LIBFT    = -Linclude/libft -lft
 
 MLX      = -Lminilibx -lmlx -framework OpenGL -framework AppKit
 
@@ -22,7 +22,7 @@ RM       = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	make bonus -C ./libft
+	make bonus -C ./include/libft
 	make -C ./minilibx
 	$(CC) $(OBJS) $(LIBFT) $(MLX) -o $(NAME)
 
