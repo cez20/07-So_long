@@ -15,7 +15,7 @@ Here are the instructions in order to compile the program
 
 # Demo
 
-<video controls>
-  <source src="./images/Demo.mp4" type="Demo/mp4">
+<video width="320" height="240" controls>
+  <source src="./images/Demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
