@@ -15,4 +15,7 @@ Here are the instructions in order to compile the program
 
 # Demo
 
-![Video](./images/Demo.mp4)
+<video controls>
+  <source src="./images/Demo.mp4" type="Demo/mp4">
+  Your browser does not support the video tag.
+</video>
