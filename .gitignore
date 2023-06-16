@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
 *.o
-minilibx/libmlx.a
+include/minilibx/libmlx.a
+include/libft/libft.a
 so_long
