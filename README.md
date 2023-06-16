@@ -12,3 +12,7 @@ Here are the instructions in order to compile the program
 | `make clean` | Removes all object files (.o) of project and from libft
 | `make fclean` | Removes all objects files (.o), all .a along with executable ./so_long
 | `make re` | Removes all objects (.o) files and executable and recompiles them
+
+# Demo
+
+
