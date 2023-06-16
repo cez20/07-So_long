@@ -15,4 +15,4 @@ Here are the instructions in order to compile the program
 
 # Demo
 
-<script src="https://gist.github.com/cez20/07-So_Long/images/Demo.mp4"></script>
+![Video](./images/Demo.mp4)
