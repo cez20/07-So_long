@@ -15,9 +15,5 @@ Here are the instructions in order to compile the program
 
 # Demo
 
-<video width="320" height="240" controls>
-  <source src="./images/Demo.mp4" type="video/mp4">
-</video>
-
-
+<img src="images/Demo.gif" width="800"/>
 
